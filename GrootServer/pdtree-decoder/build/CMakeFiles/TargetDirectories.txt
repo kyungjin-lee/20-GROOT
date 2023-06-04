@@ -1,0 +1,3 @@
+/home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/CMakeFiles/rebuild_cache.dir
+/home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/CMakeFiles/server.dir
+/home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/CMakeFiles/edit_cache.dir

@@ -1,0 +1,370 @@
+==7737== Memcheck, a memory error detector
+==7737== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==7737== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==7737== Command: ./server ../../pdtree-encoder/compressed_files/longdress-compressed/ ../decoded-files/longdress/
+==7737== Parent PID: 6859
+==7737== 
+--7737-- 
+--7737-- Valgrind options:
+--7737--    --leak-check=full
+--7737--    --show-leak-kinds=all
+--7737--    --track-origins=yes
+--7737--    --verbose
+--7737--    --log-file=valgrind-out.txt
+--7737-- Contents of /proc/version:
+--7737--   Linux version 5.3.0-53-generic (buildd@lgw01-amd64-016) (gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04)) #47~18.04.1-Ubuntu SMP Thu May 7 13:10:50 UTC 2020
+--7737-- 
+--7737-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-avx-avx2-bmi
+--7737-- Page sizes: currently 4096, max supported 4096
+--7737-- Valgrind library directory: /usr/lib/valgrind
+--7737-- Reading syms from /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server
+--7737-- Reading syms from /lib/x86_64-linux-gnu/ld-2.27.so
+--7737--   Considering /lib/x86_64-linux-gnu/ld-2.27.so ..
+--7737--   .. CRC mismatch (computed 1b7c895e wanted 2943108a)
+--7737--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.27.so ..
+--7737--   .. CRC is valid
+--7737-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--7737--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--7737--   .. CRC mismatch (computed 41ddb025 wanted 9972f546)
+--7737--    object doesn't have a symbol table
+--7737--    object doesn't have a dynamic symbol table
+--7737-- Scheduler: using generic scheduler lock implementation.
+--7737-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==7737== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-7737-by-gsim2-on-???
+==7737== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-7737-by-gsim2-on-???
+==7737== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-7737-by-gsim2-on-???
+==7737== 
+==7737== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==7737== don't want to do, unless you know exactly what you're doing,
+==7737== or are doing some strange experiment):
+==7737==   /usr/lib/valgrind/../../bin/vgdb --pid=7737 ...command...
+==7737== 
+==7737== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==7737==   /path/to/gdb ./server
+==7737== and then give GDB the following command
+==7737==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=7737
+==7737== --pid is optional if only one valgrind process is running
+==7737== 
+--7737-- REDIR: 0x401f2f0 (ld-linux-x86-64.so.2:strlen) redirected to 0x580608c1 (???)
+--7737-- REDIR: 0x401f0d0 (ld-linux-x86-64.so.2:index) redirected to 0x580608db (???)
+--7737-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--7737--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--7737--   .. CRC mismatch (computed 50df1b30 wanted 4800a4cf)
+--7737--    object doesn't have a symbol table
+--7737-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--7737--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--7737--   .. CRC mismatch (computed f893b962 wanted 95ee359e)
+--7737--    object doesn't have a symbol table
+==7737== WARNING: new redirection conflicts with existing -- ignoring it
+--7737--     old: 0x0401f2f0 (strlen              ) R-> (0000.0) 0x580608c1 ???
+--7737--     new: 0x0401f2f0 (strlen              ) R-> (2007.0) 0x04c32db0 strlen
+--7737-- REDIR: 0x401d360 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4c33ee0 (strcmp)
+--7737-- REDIR: 0x401f830 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4c374f0 (mempcpy)
+--7737-- Reading syms from /usr/lib/x86_64-linux-gnu/libboost_system.so.1.65.1
+--7737--    object doesn't have a symbol table
+--7737-- Reading syms from /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.65.1
+--7737--    object doesn't have a symbol table
+--7737-- Reading syms from /lib/x86_64-linux-gnu/libpthread-2.27.so
+--7737--   Considering /usr/lib/debug/.build-id/28/c6aade70b2d40d1f0f3d0a1a0cad1ab816448f.debug ..
+--7737--   .. build-id is valid
+--7737-- Reading syms from /usr/local/lib/libturbojpeg.so.0.2.0
+--7737-- Reading syms from /lib/x86_64-linux-gnu/libm-2.27.so
+--7737--   Considering /lib/x86_64-linux-gnu/libm-2.27.so ..
+--7737--   .. CRC mismatch (computed 7feae033 wanted b29b2508)
+--7737--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libm-2.27.so ..
+--7737--   .. CRC is valid
+--7737-- Reading syms from /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25
+--7737--    object doesn't have a symbol table
+--7737-- Reading syms from /lib/x86_64-linux-gnu/libgcc_s.so.1
+--7737--    object doesn't have a symbol table
+--7737-- Reading syms from /lib/x86_64-linux-gnu/libc-2.27.so
+--7737--   Considering /lib/x86_64-linux-gnu/libc-2.27.so ..
+--7737--   .. CRC mismatch (computed b1c74187 wanted 042cc048)
+--7737--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.27.so ..
+--7737--   .. CRC is valid
+--7737-- REDIR: 0x610ac70 (libc.so.6:memmove) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--7737-- REDIR: 0x6109d40 (libc.so.6:strncpy) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--7737-- REDIR: 0x610af50 (libc.so.6:strcasecmp) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--7737-- REDIR: 0x6109790 (libc.so.6:strcat) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--7737-- REDIR: 0x6109d70 (libc.so.6:rindex) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--7737-- REDIR: 0x610c7c0 (libc.so.6:rawmemchr) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--7737-- REDIR: 0x610ade0 (libc.so.6:mempcpy) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--7737-- REDIR: 0x610ac10 (libc.so.6:bcmp) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--7737-- REDIR: 0x6109d00 (libc.so.6:strncmp) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--7737-- REDIR: 0x6109800 (libc.so.6:strcmp) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--7737-- REDIR: 0x610ad40 (libc.so.6:memset) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--7737-- REDIR: 0x61280f0 (libc.so.6:wcschr) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--7737-- REDIR: 0x6109ca0 (libc.so.6:strnlen) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--7737-- REDIR: 0x6109870 (libc.so.6:strcspn) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--7737-- REDIR: 0x610afa0 (libc.so.6:strncasecmp) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--7737-- REDIR: 0x6109840 (libc.so.6:strcpy) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--7737-- REDIR: 0x610b0e0 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--7737-- REDIR: 0x6109da0 (libc.so.6:strpbrk) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--7737-- REDIR: 0x61097c0 (libc.so.6:index) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--7737-- REDIR: 0x6109c70 (libc.so.6:strlen) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--7737-- REDIR: 0x61146c0 (libc.so.6:memrchr) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--7737-- REDIR: 0x610aff0 (libc.so.6:strcasecmp_l) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--7737-- REDIR: 0x610abe0 (libc.so.6:memchr) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--7737-- REDIR: 0x6128eb0 (libc.so.6:wcslen) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--7737-- REDIR: 0x610a050 (libc.so.6:strspn) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--7737-- REDIR: 0x610af20 (libc.so.6:stpncpy) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--7737-- REDIR: 0x610aef0 (libc.so.6:stpcpy) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--7737-- REDIR: 0x610c7f0 (libc.so.6:strchrnul) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--7737-- REDIR: 0x610b040 (libc.so.6:strncasecmp_l) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--7737-- REDIR: 0x61fa3c0 (libc.so.6:__strrchr_avx2) redirected to 0x4c32730 (rindex)
+--7737-- REDIR: 0x6103070 (libc.so.6:malloc) redirected to 0x4c2faa0 (malloc)
+--7737-- REDIR: 0x5b5e280 (libstdc++.so.6:operator new(unsigned long)) redirected to 0x4c30110 (operator new(unsigned long))
+--7737-- REDIR: 0x61fa590 (libc.so.6:__strlen_avx2) redirected to 0x4c32cf0 (strlen)
+--7737-- REDIR: 0x61f6ba0 (libc.so.6:__memcmp_avx2_movbe) redirected to 0x4c35e00 (bcmp)
+--7737-- REDIR: 0x61d5d60 (libc.so.6:__strcmp_ssse3) redirected to 0x4c33da0 (strcmp)
+--7737-- REDIR: 0x61f6420 (libc.so.6:__memchr_avx2) redirected to 0x4c33f80 (memchr)
+--7737-- REDIR: 0x61faad0 (libc.so.6:__memcpy_avx_unaligned_erms) redirected to 0x4c366e0 (memmove)
+--7737-- REDIR: 0x5b5c390 (libstdc++.so.6:operator delete(void*)) redirected to 0x4c311d0 (operator delete(void*))
+--7737-- REDIR: 0x6103950 (libc.so.6:free) redirected to 0x4c30cd0 (free)
+--7737-- REDIR: 0x61faab0 (libc.so.6:__mempcpy_avx_unaligned_erms) redirected to 0x4c37130 (mempcpy)
+--7737-- REDIR: 0x61fa1d0 (libc.so.6:__strchrnul_avx2) redirected to 0x4c37020 (strchrnul)
+--7737-- REDIR: 0x610a590 (libc.so.6:__GI_strstr) redirected to 0x4c37760 (__strstr_sse2)
+==7737== Use of uninitialised value of size 8
+==7737==    at 0x122C1E: Decoder::decodeBreadthBytes(RxFrameHeader, unsigned char*, unsigned char*, RenderFrame*) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x122859: Decoder::decodePDTreeFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, RenderFrame*) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11C9C1: main (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==  Uninitialised value was created by a stack allocation
+==7737==    at 0x11C4CF: main (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737== 
+==7737== Invalid write of size 8
+==7737==    at 0x122C1E: Decoder::decodeBreadthBytes(RxFrameHeader, unsigned char*, unsigned char*, RenderFrame*) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x122859: Decoder::decodePDTreeFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, RenderFrame*) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11C9C1: main (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==  Address 0x100000000e is not stack'd, malloc'd or (recently) free'd
+==7737== 
+==7737== 
+==7737== Process terminating with default action of signal 11 (SIGSEGV)
+==7737==  Access not within mapped region at address 0x100000000E
+==7737==    at 0x122C1E: Decoder::decodeBreadthBytes(RxFrameHeader, unsigned char*, unsigned char*, RenderFrame*) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x122859: Decoder::decodePDTreeFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, RenderFrame*) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11C9C1: main (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==  If you believe this happened as a result of a stack
+==7737==  overflow in your program's main thread (unlikely but
+==7737==  possible), you can try to increase the size of the
+==7737==  main thread stack using the --main-stacksize= flag.
+==7737==  The main thread stack size used in this run was 8388608.
+==7737== 
+==7737== HEAP SUMMARY:
+==7737==     in use at exit: 14,237,219 bytes in 221 blocks
+==7737==   total heap usage: 1,650 allocs, 1,429 frees, 14,422,596 bytes allocated
+==7737== 
+==7737== Searching for pointers to 221 not-freed blocks
+==7737== Checked 2,127,320 bytes
+==7737== 
+==7737== 24 bytes in 1 blocks are still reachable in loss record 1 of 25
+==7737==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7737==    by 0x1205A3: boost::detail::shared_count::shared_count<boost::exception_detail::clone_impl<boost::exception_detail::bad_alloc_> >(boost::exception_detail::clone_impl<boost::exception_detail::bad_alloc_>*) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11FE44: void boost::detail::sp_pointer_construct<boost::exception_detail::clone_base const, boost::exception_detail::clone_impl<boost::exception_detail::bad_alloc_> >(boost::shared_ptr<boost::exception_detail::clone_base const>*, boost::exception_detail::clone_impl<boost::exception_detail::bad_alloc_>*, boost::detail::shared_count&) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11F54E: boost::shared_ptr<boost::exception_detail::clone_base const>::shared_ptr<boost::exception_detail::clone_impl<boost::exception_detail::bad_alloc_> >(boost::exception_detail::clone_impl<boost::exception_detail::bad_alloc_>*) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11E844: boost::exception_ptr boost::exception_detail::get_static_exception_object<boost::exception_detail::bad_alloc_>() (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11CD52: __static_initialization_and_destruction_0(int, int) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11CE44: _GLOBAL__sub_I_main (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x12580C: __libc_csu_init (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x608DB27: (below main) (libc-start.c:266)
+==7737== 
+==7737== 24 bytes in 1 blocks are still reachable in loss record 2 of 25
+==7737==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7737==    by 0x120679: boost::detail::shared_count::shared_count<boost::exception_detail::clone_impl<boost::exception_detail::bad_exception_> >(boost::exception_detail::clone_impl<boost::exception_detail::bad_exception_>*) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11FF5C: void boost::detail::sp_pointer_construct<boost::exception_detail::clone_base const, boost::exception_detail::clone_impl<boost::exception_detail::bad_exception_> >(boost::shared_ptr<boost::exception_detail::clone_base const>*, boost::exception_detail::clone_impl<boost::exception_detail::bad_exception_>*, boost::detail::shared_count&) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11F7C0: boost::shared_ptr<boost::exception_detail::clone_base const>::shared_ptr<boost::exception_detail::clone_impl<boost::exception_detail::bad_exception_> >(boost::exception_detail::clone_impl<boost::exception_detail::bad_exception_>*) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11EBEC: boost::exception_ptr boost::exception_detail::get_static_exception_object<boost::exception_detail::bad_exception_>() (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11CD93: __static_initialization_and_destruction_0(int, int) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11CE44: _GLOBAL__sub_I_main (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x12580C: __libc_csu_init (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x608DB27: (below main) (libc-start.c:266)
+==7737== 
+==7737== 28 bytes in 1 blocks are still reachable in loss record 3 of 25
+==7737==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7737==    by 0x5BF22AC: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==7737==    by 0x11C56C: main (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737== 
+==7737== 40 bytes in 1 blocks are still reachable in loss record 4 of 25
+==7737==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7737==    by 0x50485CC: ??? (in /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.65.1)
+==7737==    by 0x4010732: call_init (dl-init.c:72)
+==7737==    by 0x4010732: _dl_init (dl-init.c:119)
+==7737==    by 0x40010C9: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+==7737==    by 0x2: ???
+==7737==    by 0x1FFF0003D6: ???
+==7737==    by 0x1FFF0003DF: ???
+==7737==    by 0x1FFF00041B: ???
+==7737== 
+==7737== 56 bytes in 1 blocks are still reachable in loss record 5 of 25
+==7737==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7737==    by 0x11E820: boost::exception_ptr boost::exception_detail::get_static_exception_object<boost::exception_detail::bad_alloc_>() (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11CD52: __static_initialization_and_destruction_0(int, int) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11CE44: _GLOBAL__sub_I_main (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x12580C: __libc_csu_init (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x608DB27: (below main) (libc-start.c:266)
+==7737== 
+==7737== 56 bytes in 1 blocks are still reachable in loss record 6 of 25
+==7737==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7737==    by 0x11EBC8: boost::exception_ptr boost::exception_detail::get_static_exception_object<boost::exception_detail::bad_exception_>() (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11CD93: __static_initialization_and_destruction_0(int, int) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11CE44: _GLOBAL__sub_I_main (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x12580C: __libc_csu_init (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x608DB27: (below main) (libc-start.c:266)
+==7737== 
+==7737== 60 bytes in 1 blocks are still reachable in loss record 7 of 25
+==7737==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7737==    by 0x5BF22AC: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==7737==    by 0x11C527: main (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737== 
+==7737== 66 bytes in 1 blocks are still reachable in loss record 8 of 25
+==7737==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7737==    by 0x5048660: ??? (in /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.65.1)
+==7737==    by 0x4010732: call_init (dl-init.c:72)
+==7737==    by 0x4010732: _dl_init (dl-init.c:119)
+==7737==    by 0x40010C9: ??? (in /lib/x86_64-linux-gnu/ld-2.27.so)
+==7737==    by 0x2: ???
+==7737==    by 0x1FFF0003D6: ???
+==7737==    by 0x1FFF0003DF: ???
+==7737==    by 0x1FFF00041B: ???
+==7737== 
+==7737== 95 bytes in 1 blocks are still reachable in loss record 9 of 25
+==7737==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7737==    by 0x5BF213C: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==7737==    by 0x11C9A4: main (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737== 
+==7737== 117 bytes in 1 blocks are still reachable in loss record 10 of 25
+==7737==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7737==    by 0x5BEFB8A: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate(unsigned long, unsigned long, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==7737==    by 0x5BF1132: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_append(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==7737==    by 0x11E450: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11C943: main (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737== 
+==7737== 117 bytes in 1 blocks are still reachable in loss record 11 of 25
+==7737==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7737==    by 0x5BEFB8A: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate(unsigned long, unsigned long, char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==7737==    by 0x5BF1132: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_append(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==7737==    by 0x11E450: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11C977: main (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737== 
+==7737== 472 bytes in 8 blocks are still reachable in loss record 12 of 25
+==7737==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7737==    by 0x5BF213C: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==7737==    by 0x120133: void __gnu_cxx::new_allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::construct<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11FA05: void std::allocator_traits<std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::construct<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11FAC5: void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_realloc_insert<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11F0BD: std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::push_back(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11C72F: main (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737== 
+==7737== 552 bytes in 1 blocks are still reachable in loss record 13 of 25
+==7737==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7737==    by 0x60EAE49: __fopen_internal (iofopen.c:65)
+==7737==    by 0x60EAE49: fopen@@GLIBC_2.2.5 (iofopen.c:89)
+==7737==    by 0x1225FC: Decoder::decodePDTreeFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, RenderFrame*) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11C9C1: main (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737== 
+==7737== 760 bytes in 8 blocks are still reachable in loss record 14 of 25
+==7737==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7737==    by 0x5BF213C: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==7737==    by 0x120133: void __gnu_cxx::new_allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::construct<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11FA05: void std::allocator_traits<std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::construct<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11FAC5: void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_realloc_insert<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11F0BD: std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::push_back(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11C719: main (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737== 
+==7737== 4,096 bytes in 1 blocks are still reachable in loss record 15 of 25
+==7737==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7737==    by 0x120DE1: __gnu_cxx::new_allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::allocate(unsigned long, void const*) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x120819: std::allocator_traits<std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::allocate(std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >&, unsigned long) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x1202B5: std::_Vector_base<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_allocate(unsigned long) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11FA85: void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_realloc_insert<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11F0BD: std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::push_back(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11C719: main (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737== 
+==7737== 4,096 bytes in 1 blocks are still reachable in loss record 16 of 25
+==7737==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7737==    by 0x120DE1: __gnu_cxx::new_allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::allocate(unsigned long, void const*) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x120819: std::allocator_traits<std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::allocate(std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >&, unsigned long) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x1202B5: std::_Vector_base<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_allocate(unsigned long) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11FA85: void std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_realloc_insert<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(__gnu_cxx::__normal_iterator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11F0BD: std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::push_back(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11C72F: main (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737== 
+==7737== 4,590 bytes in 1 blocks are still reachable in loss record 17 of 25
+==7737==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7737==    by 0x12275F: Decoder::decodePDTreeFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, RenderFrame*) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11C9C1: main (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737== 
+==7737== 5,428 bytes in 92 blocks are still reachable in loss record 18 of 25
+==7737==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7737==    by 0x5BF213C: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==7737==    by 0x120133: void __gnu_cxx::new_allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::construct<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11FA05: void std::allocator_traits<std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::construct<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11F085: std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::push_back(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11C72F: main (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737== 
+==7737== 8,740 bytes in 92 blocks are still reachable in loss record 19 of 25
+==7737==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7737==    by 0x5BF213C: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==7737==    by 0x120133: void __gnu_cxx::new_allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >::construct<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11FA05: void std::allocator_traits<std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::construct<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&>(std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11F085: std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::push_back(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11C719: main (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737== 
+==7737== 14,099 bytes in 1 blocks are still reachable in loss record 20 of 25
+==7737==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7737==    by 0x122784: Decoder::decodePDTreeFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, RenderFrame*) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11C9C1: main (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737== 
+==7737== 225,584 bytes in 1 blocks are still reachable in loss record 21 of 25
+==7737==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7737==    by 0x122A1B: Decoder::decodeBreadthBytes(RxFrameHeader, unsigned char*, unsigned char*, RenderFrame*) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x122859: Decoder::decodePDTreeFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, RenderFrame*) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11C9C1: main (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737== 
+==7737== 225,584 bytes in 1 blocks are still reachable in loss record 22 of 25
+==7737==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7737==    by 0x122A30: Decoder::decodeBreadthBytes(RxFrameHeader, unsigned char*, unsigned char*, RenderFrame*) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x122859: Decoder::decodePDTreeFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, RenderFrame*) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11C9C1: main (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737== 
+==7737== 340,667 bytes in 1 blocks are still reachable in loss record 23 of 25
+==7737==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7737==    by 0x122795: Decoder::decodePDTreeFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, RenderFrame*) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11C9C1: main (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737== 
+==7737== 1,148,732 bytes in 1 blocks are still reachable in loss record 24 of 25
+==7737==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7737==    by 0x122770: Decoder::decodePDTreeFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, RenderFrame*) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11C9C1: main (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737== 
+==7737== 12,253,136 bytes in 1 blocks are possibly lost in loss record 25 of 25
+==7737==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7737==    by 0x122C13: Decoder::decodeBreadthBytes(RxFrameHeader, unsigned char*, unsigned char*, RenderFrame*) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x122859: Decoder::decodePDTreeFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, RenderFrame*) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11C9C1: main (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737== 
+==7737== LEAK SUMMARY:
+==7737==    definitely lost: 0 bytes in 0 blocks
+==7737==    indirectly lost: 0 bytes in 0 blocks
+==7737==      possibly lost: 12,253,136 bytes in 1 blocks
+==7737==    still reachable: 1,984,083 bytes in 220 blocks
+==7737==         suppressed: 0 bytes in 0 blocks
+==7737== 
+==7737== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
+==7737== 
+==7737== 1 errors in context 1 of 3:
+==7737== Invalid write of size 8
+==7737==    at 0x122C1E: Decoder::decodeBreadthBytes(RxFrameHeader, unsigned char*, unsigned char*, RenderFrame*) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x122859: Decoder::decodePDTreeFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, RenderFrame*) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11C9C1: main (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==  Address 0x100000000e is not stack'd, malloc'd or (recently) free'd
+==7737== 
+==7737== 
+==7737== 1 errors in context 2 of 3:
+==7737== Use of uninitialised value of size 8
+==7737==    at 0x122C1E: Decoder::decodeBreadthBytes(RxFrameHeader, unsigned char*, unsigned char*, RenderFrame*) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x122859: Decoder::decodePDTreeFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, RenderFrame*) (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==    by 0x11C9C1: main (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737==  Uninitialised value was created by a stack allocation
+==7737==    at 0x11C4CF: main (in /home/gsim2/Projects/Groot-Final/GrootServer/pdtree-decoder/build/server)
+==7737== 
+==7737== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
