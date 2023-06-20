@@ -1,1 +1,1 @@
-./build/server longdress ../../../Dataset/longdress-scaled/ ../morton_code_1024.bin ../compressed_files/longdress-test/ 0
+./build/server longdress /workspace/20-GROOT/longdress/Ply/ /workspace/20-GROOT/GrootServer/pdtree-encoder/morton_code_1024.bin /workspace/20-GROOT/GrootServer/pdtree-encoder/compressed_files/ 0

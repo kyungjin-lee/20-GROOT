@@ -95,7 +95,7 @@ int main(int argc, char* argv[])
     }
     else if(dataset_name == "longdress")
     {
-        scale = 1;
+        scale = 0.001;
         voxelSize = 0.001;
         //isShort = true;
     }

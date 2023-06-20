@@ -754,7 +754,7 @@ void Frame::writeFrame(std::string filename, unsigned int* avgSize)
     fwrite(&payload_.color_bytes[0], sizeof(uint8_t), payload_.color_bytes.size(), pFile);
     //  fwrite(&compressed_color[0], sizeof(uint8_t), compressed_color.size(), pFile);
     fclose(pFile);
-/*    printf("[TEST WRITE HEADER]\n");
+    printf("[TEST WRITE HEADER]\n");
     printf("Header num points : %d\n", header_.num_points);
     printf("Header num breadth byte: %d\n", header_.num_breadth_bytes);
     printf("Header num breadth nodes: %d\n", header_.num_breadth_nodes);
@@ -762,7 +762,7 @@ void Frame::writeFrame(std::string filename, unsigned int* avgSize)
     printf("Header num color bytes : %d\n", header_.num_color_bytes);
     printf("Header root center : %f %f %f\n", header_.root_center[0], header_.root_center[1], header_.root_center[2]);
     printf("Header sidelength: %f\n", header_.root_sidelength);
-*/
+
     cloud_.reset();
 
 }      
