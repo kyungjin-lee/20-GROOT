@@ -61,8 +61,9 @@ Test encode/decode Groot on server
 #### Prerequisites
 Tested on Ubuntu 18.04
 * Install PCL
-'''
-apt install libeigen3-dev libflann-dev libvtk6-qt-dev libpcap-dev  libboost-all-dev freeglut3-dev
+```
+apt install -y libeigen3-dev libflann-dev libvtk6-qt-dev libpcap-dev  libboost-all-dev freeglut3-dev
+
 wget https://github.com/PointCloudLibrary/pcl/archive/pcl-1.9.1.tar.gz
 tar zvfx pcl-1.9.1.tar.gz
 
@@ -71,24 +72,27 @@ mkdir build && cd build
 cmake ..
 make -j2
 make -j2 install
-'''
+```
 
 * Install TurboJpeg
-'''
+```
 apt install libturbojpeg libturbojpeg0-dev
-'''
+```
 
 * Install Zstandard
-'''
+```
 git clone https://github.com/facebook/zstd.git
 cd zstd
 make
 make install
-'''
+```
 
 #### Test Encoding/Decoding
 * Encoding
-'''
+
+   Make sure to check the scale of the data and set the smallest voxel size accordingly. For example, 8i dataset uses millimeter scale for the x, y, z coordinates (value range between 1~1000). The smallest voxel size should be set to 1. For the ease of rendering, I used the meter scale so I used a scaling factor of 0.001 and set the smallest voxel size as 0.001. The default value is set as scaling factor of 1 and smallest voxel size as 0.001. Change the main.cpp as needed.
+
+```
 # build
 cd GrootServer/pdtree-encoding
 mkdir build
@@ -97,8 +101,8 @@ cmake ..
 make 
 
 # refer to GrootServer/pdtree-encoding/run.sh for example
-./server <dataset name> path/to/ply/files path/to/mortoncode path/to/output/folder 0 
-'''
+./server <dataset name: 8i/panoptic/custom> path/to/ply/files path/to/mortoncode path/to/output/folder 0 <(optional) scale(float)> <(optional) voxel size: float>
+```
 
 ### Mobile
 iOS-based Groot decoder and renderer
