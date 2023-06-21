@@ -31,7 +31,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-Source code for project "GROOT: A Real-time Streaming System of High-Fidelity Volumetric Videos" (MobiCom'20)
+Official source code for project "GROOT: A Real-time Streaming System of High-Fidelity Volumetric Videos" (MobiCom'20)
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -101,7 +101,7 @@ cmake ..
 make 
 
 # refer to GrootServer/pdtree-encoding/run.sh for example
-./server <dataset name: 8i/panoptic/custom> path/to/ply/files path/to/mortoncode path/to/output/folder 0 <(optional) scale(float)> <(optional) voxel size: float>
+./server <dataset name: 8i/panoptic/custom> path/to/ply/files path/to/mortoncode path/to/output/folder 0 
 ```
 
 ### Mobile
