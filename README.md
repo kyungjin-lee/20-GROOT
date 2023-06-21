@@ -20,10 +20,6 @@
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
     </li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#citation">Citation</a></li>
@@ -35,7 +31,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-Source code for project "GROOT: A Real-time Streaming System of High-Fidelity Volumetric Videos" (MobiCom'20)
+Official source code for project "GROOT: A Real-time Streaming System of High-Fidelity Volumetric Videos" (MobiCom'20)
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -46,7 +42,7 @@ Source code for project "GROOT: A Real-time Streaming System of High-Fidelity Vo
 
 * [Point Cloud Library (PCL)](https://pointclouds.org/)
 * [TurboJpeg](https://libjpeg-turbo.org/)
-* [Zstadard](https://github.com/facebook/zstd)
+* [Zstandard](https://github.com/facebook/zstd)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -56,8 +52,57 @@ Source code for project "GROOT: A Real-time Streaming System of High-Fidelity Vo
 ## Getting Started
 Currently only offline testing only. Online streaming code coming soon.
 
+### Dataset
+Download dataset from [8i Voxelized Full Bodies](http://plenodb.jpeg.org/pc/8ilabs/)
+
 ### Server
-Test encode/decode Groot
+Test encode/decode Groot on server
+
+#### Prerequisites
+Tested on Ubuntu 18.04
+* Install PCL
+```
+apt install -y libeigen3-dev libflann-dev libvtk6-qt-dev libpcap-dev  libboost-all-dev freeglut3-dev
+
+wget https://github.com/PointCloudLibrary/pcl/archive/pcl-1.9.1.tar.gz
+tar zvfx pcl-1.9.1.tar.gz
+
+cd pcl-pcl-1.9.1
+mkdir build && cd build
+cmake ..
+make -j2
+make -j2 install
+```
+
+* Install TurboJpeg
+```
+apt install libturbojpeg libturbojpeg0-dev
+```
+
+* Install Zstandard
+```
+git clone https://github.com/facebook/zstd.git
+cd zstd
+make
+make install
+```
+
+#### Test Encoding/Decoding
+* Encoding
+
+   Make sure to check the scale of the data and set the smallest voxel size accordingly. For example, 8i dataset uses millimeter scale for the x, y, z coordinates (value range between 1~1000). The smallest voxel size should be set to 1. For the ease of rendering, I used the meter scale so I used a scaling factor of 0.001 and set the smallest voxel size as 0.001. The default value is set as scaling factor of 1 and smallest voxel size as 0.001. Change the main.cpp as needed.
+
+```
+# build
+cd GrootServer/pdtree-encoding
+mkdir build
+cd build
+cmake ..
+make 
+
+# refer to GrootServer/pdtree-encoding/run.sh for example
+./server <dataset name: 8i/panoptic/custom> path/to/ply/files path/to/mortoncode path/to/output/folder 0 
+```
 
 ### Mobile
 iOS-based Groot decoder and renderer

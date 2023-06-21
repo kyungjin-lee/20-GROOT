@@ -86,24 +86,18 @@ int main(int argc, char* argv[])
     float x = 0;
     float y = 0;
     float z = 0;
-    float voxelSize = 0;
+    float voxelSize = 0.001;
     // if isshort ODB is 2 bytes not 3 bytes
     bool isShort = false;
-    if(dataset_name == "twopeople")
-    {
-        voxelSize= 0.001;
-    }
-    else if(dataset_name == "longdress")
-    {
-        scale = 1;
-        voxelSize = 0.001;
-        //isShort = true;
+    if(dataset_name == "8i"){
+	    scale = 0.001;
+	    voxelSize = 0.001;
     }
     else if(dataset_name == "panoptic")
     {
-        voxelSize = 0.001;
-        y = -1;
-        isFlip = true;
+	    voxelSize = 0.001;
+	    y = -1;
+	    isFlip = true;
     }
 
     // prepare file list
